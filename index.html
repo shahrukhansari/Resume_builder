@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume</title>
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2"> Resume Builder</h1>
+     
+         <div class="row">
+           <div class="col-md-6">
+
+           <h3> Personal Details</h3>
+        <div class="form-group">
+            <label for="nameField"> Name</label>
+            <input type="text" id="nameField" placeholder="Enter your full name" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="jobField">Job profile</label>
+            <input type="text" id="jobField" placeholder="Enter your job profile" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="contactField"> Contact Number</label>
+            <input type="text" id="contactField" placeholder="Enter your contact number" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="emailField"> Email Id</label>
+            <input type="text" id="emailField" placeholder="Enter your Email id" class="form-control">
+        </div>
+        
+
+        <div class="form-group mt-2">
+            <label for="addressField"> Full Address</label>
+            <textarea id="addressField" placeholder="Enter your address" class="form-control" rows="3"></textarea>
+        </div>
+
+
+
+        <div class="form-group mt-2" id ="in">
+            <label for="">Interest </label>
+            <textarea placeholder="enter here..." class="form-control inField" rows="2"></textarea>
+        
+            
+        <div class="container text-center mt-2"  id="inAddButton">
+            <button onclick="addNewINField()" class="btn btn-primary btn-sm">+</button>
+        </div>
+        </div>
+
+
+        <div class="form-group mt-2" id ="la">
+            <label for="">Language </label>
+            <textarea placeholder="enter here..." class="form-control laField" rows="2"></textarea>
+        
+            
+        <div class="container text-center mt-2"  id="laAddButton">
+            <button onclick="addNewLAField()" class="btn btn-primary btn-sm">+</button>
+        </div>
+        </div>
+
+
+
+
+
+        <div class="form-group" mt-2>
+            <label for=""> select image</label>
+            <input id="imgField" type="file" class="form-control">
+        </div>
+
+
+
+
+        <p class="text-secondary my-2">Links</p>
+
+        <div class="form-group ">
+            <label for="gitField"> Github link</label>
+            <input type="text" id="gitField" placeholder="paste here" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="linkField"> LinkedIn link </label>
+            <input type="text" id="linkField" placeholder="paste here" class="form-control">
+        </div>
+           
+        
+        <div class="form-group mt-2">
+            <label for="instaField"> Instagram link </label>
+            <input type="text" id="instaField" placeholder="paste here" class="form-control">
+        </div>
+        </div>
+
+
+        <div class="col-md-6">
+         <h3>Proffesional details</h3>
+
+         <div class="form-group mt-2">
+            <label for="addressField"> Objective</label>
+            <textarea id="objectiveField" placeholder="enter here..." class="form-control" rows="2"></textarea>
+        </div>
+
+
+        <div class="form-group mt-2" id ="we">
+            <label for="">Work Experience </label>
+            <textarea placeholder="enter here..." class="form-control weField" rows="2"></textarea>
+        
+            
+        <div class="container text-center mt-2"  id="weAddButton">
+            <button onclick="addNewWEField()" class="btn btn-primary btn-sm">+</button>
+        </div>
+        </div>
+        
+        
+         
+
+
+
+        <div class="form-group mt-2" id="aq">
+            <label for="">Academic Qualification </label>
+            <textarea placeholder="enter here..." class="form-control eqField" rows="2">
+
+            </textarea>
+        
+            
+        <div class="container text-center mt-2"  id="aqAddButton">
+            <button onclick="addNewAQField()"  class="btn btn-primary btn-sm">+</button>
+        </div>
+    </div>
+
+
+    <div class="form-group mt-2" id="te">
+        <label for="">Technical Skills </label>
+        <textarea placeholder="enter here..." class="form-control teField" rows="2">
+
+        </textarea>
+    
+        
+    <div class="container text-center mt-2"  id="teAddButton">
+        <button onclick="addNewTEField()"  class="btn btn-primary btn-sm">+</button>
+    </div>
+</div>
+
+
+
+    <div class="form-group mt-2" id="pr">
+        <label for="">Projects Done </label>
+        <textarea placeholder="enter here..." class="form-control prField" rows="2">
+
+        </textarea>
+    
+        
+    <div class="container text-center mt-2"  id="prAddButton">
+        <button onclick="addNewPRField()"  class="btn btn-primary btn-sm">+</button>
+    </div>
+</div>
+
+
+    </div>
+
+           </div>
+    
+
+
+
+
+    <div class="container text-center mt-3 ">
+        <button onclick="generateCV()" class="btn btn-primary btn-lg"> Generate resume</button>
+     
+    </div>
+     </div>
+
+     <!-- template -->
+     <div class="container" id="cv-template">
+         <div class="row">
+             <div class="col-md-4 text-center py-5 background">
+              <img id="imgTemplate" src="https://emtechmena.com/wp-content/uploads/2018/07/default-avatar.png" alt="" class="img-fluid myimg" >
+              <div class="container">
+                  <p id="jobT">Developer</p>
+                  <hr/>
+                  <p id="contactT"> 6287860088</p>
+                  <p id="addressT">opposite the airport,Dhanbad,Jharkhand.</p>
+                  <hr/>
+
+                  <p>
+                      <a id="gitT" href="#1">https://www.github.com</a></p>
+                   
+                  <p>
+                      <a id="linkedT" href="#1">https://www.linkedin.com</a></p>
+
+                  <p>
+                      <a id="instaT" href="#1">https://www.instagram.com</a></p>
+                      <hr/>
+
+                      <p id="inT"> Traveling</p>
+                      <hr>
+
+                      <p id="laT"> English</p>
+
+
+              </div>
+             </div>
+
+
+
+
+             <div class="col-md-8 py-5">
+                 <h1 id="nameT" class="text-center" style="font-weight:800">
+                    Shahrukh Ansari
+                </h1>
+                 
+                 <div class="card mt-4">
+                     <div class="card-header background">
+                         <h3>objective</h3>
+                     </div>
+                     <div class="card-body">
+                         <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolorem ipsum debitis expedita, fuga itaque eos. Excepturi quo reprehenderit, recusandae molestias dignissimos incidunt eius! Fugit sequi repellat tenetur veniam saepe.
+
+                         </p>
+                     </div>
+                 </div>
+
+                 
+
+                 <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                      <ul id="weT">
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+
+                       </ul>
+                        </p>
+                    </div>
+                </div>
+               
+                 
+                 <div class="card mt-4">
+                     <div class="card-header background">
+                         <h3>Academic Qualification</h3>
+                     </div>
+                     <div class="card-body">
+                       <ul id="aqT">
+                           <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                           <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                           <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+
+                        </ul>
+                         </p>
+                     </div>
+                 </div>
+
+
+                 <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Technical Skills</h3>
+                    </div>
+                    <div class="card-body">
+                      <ul id="teT">
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+
+                       </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+
+                 <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Projects Done</h3>
+                    </div>
+                    <div class="card-body">
+                      <ul id="prT">
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+                          <li>Lorem ipsum dolor sit amet consectetur adip.</li>
+
+                       </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                
+                 <div class="container mt-3 text-center">
+                 <button onclick="printCV()" class="btn background">
+                     Print CV
+                 </button>
+                 </div>
+                 
+             
+        
+         </div>
+
+     </div>
+     </div>
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
